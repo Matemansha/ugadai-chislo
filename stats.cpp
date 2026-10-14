@@ -15,6 +15,7 @@ int getTotalAttempts() {
     for (int i = 0; i< attemptsHistory.size(); i++){
         sum1+=attemptsHistory[i];
     }
+    return sum1;
 }
 
 double getAverageAttempts() {

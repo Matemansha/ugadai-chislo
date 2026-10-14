@@ -3,9 +3,9 @@
 #include <vector>
 
 void addGameResult(int attempts);
-int getTotalAttempts()
+int getTotalAttempts();
 int getGamesCount();
-int getAverageAttempts();
+double getAverageAttempts();
 int getLastAttempts();
 
 void showStats();
