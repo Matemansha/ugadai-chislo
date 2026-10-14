@@ -10,6 +10,12 @@ void addGameResult(int attempts) {
 int getGamesCount() {
     return attemptsHistory.size();
 }
+int getTotalAttempts() {
+    int sum1 = 0;
+    for (int i = 0; i< attemptsHistory.size(); i++){
+        sum1+=attemptsHistory[i];
+    }
+}
 
 double getAverageAttempts() {
     if(attemptsHistory.size()==0) {
@@ -26,13 +32,22 @@ int getLastAttempts() {
     if (attemptsHistory.size()==0){
         return 0;
     }
-    return attemptsHistory[attemptsHistory.size()-1];
+    return attemptsHistory.size()-1;
 }
 
 void showStats() {
+    std::cout << " STATISTICS " << std::endl;
+    std::cout << "Game attempts: " << getGamesCount() << std::endl;
 
-
-    
-  
-    
+    if (getGamesCount()==0) {
+        std::cout << "Haven't played yet :( " << std::endl;
+    } else {
+        std::cout << "Total attempts: " << getTotalAttempts()<< std::endl;
+        std::cout << "Average attempts: " << getAverageAttempts()<< std::endl;
+        std::cout << "Last attempt: " << getLastAttempts()<< std::endl;
+        std::cout << "History: " << std::endl;
+        for (int i=0; attemptsHistory.size() > i; i++) {
+            std::cout << "Game" << (i+1) << ": " << attemptsHistory[i];
+        }
+    }
 }
