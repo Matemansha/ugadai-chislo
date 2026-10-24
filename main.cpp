@@ -3,6 +3,7 @@
 #include "game.h"
 #include "stats.h"
 
+
 int main() {
     std::cout << "\n";
     std::cout << "Welcome to the Guess the Number game! \n";
@@ -14,7 +15,7 @@ int main() {
     do {
         Game game;
         game.play();
-        int attempts = game.getAttempts();
+        int attempts = game.n;
         history.push_back(attempts);
         addGameResult(attempts);
         std::cout << "\nTry again? (y/n): ";
